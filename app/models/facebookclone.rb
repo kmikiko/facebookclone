@@ -1,0 +1,2 @@
+class Facebookclone < ApplicationRecord
+end
