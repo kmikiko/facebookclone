@@ -1,2 +1,16 @@
-<h1>Facebookclones#index</h1>
-<p>Find me in app/views/facebookclones/index.html.erb</p>
+<h1>投稿</h1>
+<%= link_to '近況アップデートを投稿', new_facebookclone_path %>
+
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+
+<% @facebookclones.each do |facebookclone| %>
+  <tr>
+    <td><%= facebookclone.name %></td>
+    <td><%= facebookclone.content %></td>
+  </tr>
+<% end %>
+</table>
+

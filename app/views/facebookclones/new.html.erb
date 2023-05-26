@@ -1,0 +1,9 @@
+<h1>投稿を作成</h1>
+
+<%= form_with(model: @facebookclones) do |form| %>
+  <div class="content">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  <%= form.submit "投稿"%>
+<% end %>
