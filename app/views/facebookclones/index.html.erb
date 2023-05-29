@@ -3,13 +3,17 @@
 
 <table>
   <tr>
-    <th>内容</th>
+    <th>内容</th> 
   </tr>
 
 <% @facebookclones.each do |facebookclone| %>
   <tr>
-    <td><%= facebookclone.name %></td>
     <td><%= facebookclone.content %></td>
+    <%# <td><strong>Image:</strong>
+      <%= image_tag @facebookclone.image.url %>
+    <td><%= link_to '見る', facebookclone_path(facebookclone.id) %></td>
+    <td><%= link_to "編集する", edit_facebookclone_path(facebookclone.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除する',  facebookclone_path(facebookclone.id),method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>
   </tr>
 <% end %>
 </table>
