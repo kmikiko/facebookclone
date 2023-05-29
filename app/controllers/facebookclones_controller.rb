@@ -1,5 +1,5 @@
 class FacebookclonesController < ApplicationController
-  before_action :set_facebookclone, only: [:edit, :update, :destroy]
+  before_action :set_facebookclone, only: [:edit, :update, :destroy, ]
   
   def index
     @facebookclones = Facebookclone.all
@@ -7,7 +7,7 @@ class FacebookclonesController < ApplicationController
 
   def new
     if params[:back]
-      @facebookclone = Facebookclone.new(image_params)
+      @facebookclone = Facebookclone.new(facebookclone_params)
     else
       @facebookclone = Facebookclone.new
     end
@@ -51,11 +51,7 @@ class FacebookclonesController < ApplicationController
   private
 
   def facebookclone_params
-    params.require(:facebookclone).permit(:content)
-  end
-
-  def image_params
-    params.require(:facebookclone).permit(:image, :image_cache)
+    params.require(:facebookclone).permit(:content,:image, :image_cache)
   end
 
   def set_facebookclone
