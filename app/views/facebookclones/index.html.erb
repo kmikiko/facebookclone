@@ -1,11 +1,12 @@
-<h1>投稿</h1>
+<h3>投稿</h3>
 <%= link_to '近況アップデートを投稿', new_facebookclone_path %>
 
 <table>
   <% @facebookclones.each do |facebookclone| %>
     <tr>
-      <td><%= facebookclone.content %></td>
+      <td><h3><%= facebookclone.content %></h3></td> 
       <td><%= image_tag facebookclone.image.url %></td> 
+      <td><%= facebookclone.user.name %></td>
       <td><%= link_to '見る', facebookclone_path(facebookclone.id) %></td>
       <td><%= link_to "編集する", edit_facebookclone_path(facebookclone.id), data: { confirm: '本当に編集していいですか？' } %></td>
       <td><%= link_to '削除する',  facebookclone_path(facebookclone.id),method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>

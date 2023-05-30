@@ -3,7 +3,6 @@ class FacebookclonesController < ApplicationController
   
   def index
     @facebookclones = Facebookclone.all
-    # @facebookclone = Facebookclone.find(params[:id])
   end
 
   def new
@@ -15,7 +14,7 @@ class FacebookclonesController < ApplicationController
   end
 
   def create
-    @facebookclone = Facebookclone.new(facebookclone_params)
+    @facebookclone = current_user.facebookclones.build(facebookclone_params)
     if @facebookclone.save
       redirect_to facebookclones_path, notice: "投稿しました！"
     else
@@ -45,7 +44,7 @@ class FacebookclonesController < ApplicationController
   end
 
   def confirm
-    @facebookclone = Facebookclone.new(facebookclone_params)
+    @facebookclone = current_user.facebookclones.build(facebookclone_params)  
     render :new if @facebookclone.invalid?
   end
 
