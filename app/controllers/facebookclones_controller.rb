@@ -3,6 +3,7 @@ class FacebookclonesController < ApplicationController
   
   def index
     @facebookclones = Facebookclone.all
+    # @facebookclone = Facebookclone.find(params[:id])
   end
 
   def new

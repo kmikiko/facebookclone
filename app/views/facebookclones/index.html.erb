@@ -2,19 +2,14 @@
 <%= link_to '近況アップデートを投稿', new_facebookclone_path %>
 
 <table>
-  <tr>
-    <th>内容</th> 
-  </tr>
-
-<% @facebookclones.each do |facebookclone| %>
-  <tr>
-    <td><%= facebookclone.content %></td>
-    <td><%= facebookclone.image %></td>
-    <%# <%= image_tag @facebookclone.image.url %>
-    <td><%= link_to '見る', facebookclone_path(facebookclone.id) %></td>
-    <td><%= link_to "編集する", edit_facebookclone_path(facebookclone.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除する',  facebookclone_path(facebookclone.id),method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>
-  </tr>
-<% end %>
+  <% @facebookclones.each do |facebookclone| %>
+    <tr>
+      <td><%= facebookclone.content %></td>
+      <td><%= image_tag facebookclone.image.url %></td> 
+      <td><%= link_to '見る', facebookclone_path(facebookclone.id) %></td>
+      <td><%= link_to "編集する", edit_facebookclone_path(facebookclone.id), data: { confirm: '本当に編集していいですか？' } %></td>
+      <td><%= link_to '削除する',  facebookclone_path(facebookclone.id),method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>
+    </tr>
+  <% end %>
 </table>
 

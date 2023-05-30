@@ -14,14 +14,13 @@
 
 <%= form_with(model: @facebookclone) do |form| %>
   <div class="content">
-    <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
   <div class="field">
-  <%= form.label :image %>
-  <%# <%= image_tag(@facebookclone.image.url) if @facebookclone.image && @facebookclone.image.url%>
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-</div>
+    <%# <%= f.label :image %>
+    <%# <%= image_tag(@facebookclone.image.url) if @facebookclone.image && @facebookclone.image.url %>   
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
   <%= form.submit "投稿"%>
 <% end %>
