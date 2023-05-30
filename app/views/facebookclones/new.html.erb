@@ -9,7 +9,7 @@
   </div>
 <% end %>
 <h1>投稿を作成</h1>
-<%= form_with(model: @facebookclone) do |form| %>
+<%= form_with(model: @facebookclone, local: true ,url: confirm_facebookclones_path) do |form| %>
   <div class="content">
     <%= form.text_area :content %>
   </div>
