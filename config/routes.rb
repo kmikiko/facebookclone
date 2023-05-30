@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  root to: "home#index"
+  # root to: "home#index"
   resources :facebookclones do
     collection do
       post :confirm
