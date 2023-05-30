@@ -5,7 +5,7 @@
   <% @facebookclones.each do |facebookclone| %>
     <tr>
       <td><h3><%= facebookclone.content %></h3></td> 
-      <td><%= image_tag facebookclone.image.url %></td> 
+      <td><%= image_tag (facebookclone.image.url) if facebookclone.image && facebookclone.image.url %></td> 
       <td><%= facebookclone.user.name %></td>
       <td><%= link_to '見る', facebookclone_path(facebookclone.id) %></td>
       <td><%= link_to "編集する", edit_facebookclone_path(facebookclone.id), data: { confirm: '本当に編集していいですか？' } %></td>
