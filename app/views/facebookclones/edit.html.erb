@@ -1,14 +1,13 @@
 <% if @facebookclone.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @facebookclone.errors.count %>件のエラーがあります。</h2>
-      <ul>
-
+  <div id="error_explanation">
+    <h2><%= @facebookclone.errors.count %>件のエラーがあります。</h2>
+    <ul>
       <% @facebookclone.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <h1>投稿を作成</h1>
 
@@ -18,10 +17,9 @@
     <%= form.text_area :content %>
   </div>
   <div class="field">
-  <%= form.label :image %>
-  <%# <%= image_tag(facebookclone.image.url) if facebookclone.image && facebookclone.image.url %> 
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-</div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
   <%= form.submit "投稿"%>
 <% end %>
