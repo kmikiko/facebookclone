@@ -15,6 +15,7 @@ gem 'bcrypt'
 gem 'faker'
 gem 'carrierwave'
 gem 'mini_magick'
+# gem 'rack-mini-profiler', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -23,6 +24,7 @@ end
 group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
+  # gem 'rack-mini-profiler', '~> 2.0', require: false
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
